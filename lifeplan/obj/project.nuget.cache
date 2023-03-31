@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Nn1iRXGv3Ew9VABZGoOSiJOnQ+mBBBkMdZ7Fk/m3lagJWnVAtKDz1ul6L50RyFrOg3H1GPNzZaiLDBZByI+UHg==",
+  "dgSpecHash": "PyNy9vRqvVwZE3wT9TsvoU7tdQRozkZLSWZCTtp+flZuABVllQgsZYTx6qVlyQW6PFW51V8lSmOO8QTZSoao0w==",
   "success": true,
-  "projectFilePath": "/Users/rinmo/Projects/lifeplan/lifeplan/lifeplan.csproj",
+  "projectFilePath": "/Users/rinmo/Projects/LifePlanSimulate/lifeplan/lifeplan/lifeplan.csproj",
   "expectedPackageFiles": [
     "/Users/rinmo/.nuget/packages/microsoft.aspnetcore.authorization/7.0.4/microsoft.aspnetcore.authorization.7.0.4.nupkg.sha512",
     "/Users/rinmo/.nuget/packages/microsoft.aspnetcore.components/7.0.4/microsoft.aspnetcore.components.7.0.4.nupkg.sha512",

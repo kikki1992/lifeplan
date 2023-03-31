@@ -1806,11 +1806,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/rinmo/Projects/lifeplan/lifeplan/lifeplan.csproj",
+      "projectUniqueName": "/Users/rinmo/Projects/LifePlanSimulate/lifeplan/lifeplan/lifeplan.csproj",
       "projectName": "lifeplan",
-      "projectPath": "/Users/rinmo/Projects/lifeplan/lifeplan/lifeplan.csproj",
+      "projectPath": "/Users/rinmo/Projects/LifePlanSimulate/lifeplan/lifeplan/lifeplan.csproj",
       "packagesPath": "/Users/rinmo/.nuget/packages/",
-      "outputPath": "/Users/rinmo/Projects/lifeplan/lifeplan/obj/",
+      "outputPath": "/Users/rinmo/Projects/LifePlanSimulate/lifeplan/lifeplan/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/rinmo/.nuget/NuGet/NuGet.Config"
