@@ -826,3 +826,11 @@
 /Users/rinmo/Projects/LifePlanSimulate/lifeplan/lifeplan/obj/Debug/net7.0/refint/lifeplan.dll
 /Users/rinmo/Projects/LifePlanSimulate/lifeplan/lifeplan/obj/Debug/net7.0/lifeplan.pdb
 /Users/rinmo/Projects/LifePlanSimulate/lifeplan/lifeplan/obj/Debug/net7.0/ref/lifeplan.dll
+/Users/rinmo/Projects/LifePlanSimulate/lifeplan/lifeplan/bin/Debug/net7.0/wwwroot/_framework/Radzen.Blazor.dll
+/Users/rinmo/Projects/LifePlanSimulate/lifeplan/lifeplan/bin/Debug/net7.0/wwwroot/_framework/System.Linq.Dynamic.Core.dll
+/Users/rinmo/Projects/LifePlanSimulate/lifeplan/lifeplan/bin/Debug/net7.0/wwwroot/_framework/Radzen.Blazor.dll.gz
+/Users/rinmo/Projects/LifePlanSimulate/lifeplan/lifeplan/bin/Debug/net7.0/wwwroot/_framework/System.Linq.Dynamic.Core.dll.gz
+/Users/rinmo/Projects/LifePlanSimulate/lifeplan/lifeplan/bin/Debug/net7.0/Radzen.Blazor.dll
+/Users/rinmo/Projects/LifePlanSimulate/lifeplan/lifeplan/bin/Debug/net7.0/System.Linq.Dynamic.Core.dll
+/Users/rinmo/Projects/LifePlanSimulate/lifeplan/lifeplan/obj/Debug/net7.0/build-gz/d+VMMcfw.gz
+/Users/rinmo/Projects/LifePlanSimulate/lifeplan/lifeplan/obj/Debug/net7.0/build-gz/yzZy2ouQ.gz

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "PyNy9vRqvVwZE3wT9TsvoU7tdQRozkZLSWZCTtp+flZuABVllQgsZYTx6qVlyQW6PFW51V8lSmOO8QTZSoao0w==",
+  "dgSpecHash": "bxZXDc1wJ+jshWPVg4LrZJrhN4/688vBd0y06nK8e1UqlYDRWDS2F6j7DwV3W+N1lk5OPP3W8IWFbTvbo1nsNQ==",
   "success": true,
   "projectFilePath": "/Users/rinmo/Projects/LifePlanSimulate/lifeplan/lifeplan/lifeplan.csproj",
   "expectedPackageFiles": [
+    "/Users/rinmo/.nuget/packages/libsassbuilder/2.0.1/libsassbuilder.2.0.1.nupkg.sha512",
     "/Users/rinmo/.nuget/packages/microsoft.aspnetcore.authorization/7.0.4/microsoft.aspnetcore.authorization.7.0.4.nupkg.sha512",
     "/Users/rinmo/.nuget/packages/microsoft.aspnetcore.components/7.0.4/microsoft.aspnetcore.components.7.0.4.nupkg.sha512",
     "/Users/rinmo/.nuget/packages/microsoft.aspnetcore.components.analyzers/7.0.4/microsoft.aspnetcore.components.analyzers.7.0.4.nupkg.sha512",
@@ -28,7 +29,9 @@
     "/Users/rinmo/.nuget/packages/microsoft.extensions.primitives/7.0.0/microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "/Users/rinmo/.nuget/packages/microsoft.jsinterop/7.0.4/microsoft.jsinterop.7.0.4.nupkg.sha512",
     "/Users/rinmo/.nuget/packages/microsoft.jsinterop.webassembly/7.0.4/microsoft.jsinterop.webassembly.7.0.4.nupkg.sha512",
+    "/Users/rinmo/.nuget/packages/radzen.blazor/4.8.3/radzen.blazor.4.8.3.nupkg.sha512",
     "/Users/rinmo/.nuget/packages/system.io.pipelines/7.0.0/system.io.pipelines.7.0.0.nupkg.sha512",
+    "/Users/rinmo/.nuget/packages/system.linq.dynamic.core/1.2.22/system.linq.dynamic.core.1.2.22.nupkg.sha512",
     "/Users/rinmo/.nuget/packages/system.text.encodings.web/7.0.0/system.text.encodings.web.7.0.0.nupkg.sha512",
     "/Users/rinmo/.nuget/packages/system.text.json/7.0.0/system.text.json.7.0.0.nupkg.sha512",
     "/Users/rinmo/.nuget/packages/microsoft.netcore.app.runtime.mono.browser-wasm/7.0.4/microsoft.netcore.app.runtime.mono.browser-wasm.7.0.4.nupkg.sha512"

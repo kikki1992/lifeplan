@@ -1,10 +1,77 @@
 ﻿@page "/"
+@using System.Globalization
 
-<PageTitle>Index</PageTitle>
+<PageTitle>初期ページ</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1>ライフプランシミュレーション</h1>
 
-Welcome to your new app.
+<RadzenCard class="my-5">
+    <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Start" Wrap="FlexWrap.Wrap">
+        <RadzenStack Orientation="Orientation.Vertical" Gap="4px">
+            年間支出(万円)
+            <RadzenNumeric @bind-Value="@InputOutgo" Size="ButtonSize.Small" />
+        </RadzenStack>
+        <RadzenStack Orientation="Orientation.Vertical" Gap="4px">
+            年間収入
+            <RadzenNumeric @bind-Value="@InputIncome" Size="ButtonSize.Small" />
+        </RadzenStack>
+    </RadzenStack>
+    <RadzenChart>
+        <RadzenLineSeries Data="@BalanceSheet" CategoryProperty="Date" Title="支出" LineType="LineType.Dashed" ValueProperty="Outgo">
+            <RadzenMarkers MarkerType="MarkerType.Square" />
+            <RadzenSeriesDataLabels Visible="@showDataLabels" />
+        </RadzenLineSeries>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+        <RadzenCategoryAxis Padding="20" Formatter="@FormatAsYear" />
+        <RadzenValueAxis Formatter="@FormatAsYen">
+            <RadzenGridLines Visible="true" />
+            <RadzenAxisTitle Text="日本円" />
+        </RadzenValueAxis>
+    </RadzenChart>
 
+</RadzenCard>
+
+
+
+@code {
+    int InputOutgo;　//支出
+    int InputIncome;　//収入
+
+
+    bool showDataLabels = false;
+
+    class DataItem
+    {
+        public string Date { get; set; }
+        public double Outgo { get; set; }
+        public double Income { get; set; }
+    }
+
+    string FormatAsYen(object value)
+    {
+        return ((double)value).ToString("C0", CultureInfo.CreateSpecificCulture("ja-Jp"));
+    }
+
+    string FormatAsYear(object value)
+    {
+        if (value != null)
+        {
+            return Convert.ToDateTime(value).ToString("yy");
+        }
+
+        return string.Empty;
+    }
+
+    DataItem[] BalanceSheet = new DataItem[] {
+        new DataItem
+        {
+            Date = ("2019-01-01"),
+            Outgo = 234000
+        },
+        new DataItem
+        {
+            Date = ("2020-02-01"),
+            Outgo = 269000
+        }
+    };
+}
