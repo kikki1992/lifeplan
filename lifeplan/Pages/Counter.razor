@@ -19,6 +19,11 @@
         </RadzenStack>
 
         <RadzenStack Orientation="Orientation.Vertical" Gap="4px">
+            年間収入(万円)
+            <RadzenNumeric @bind-Value="@InputIncome" Size="ButtonSize.Small" />
+        </RadzenStack>
+
+        <RadzenStack Orientation="Orientation.Vertical" Gap="4px">
             開始年数(年)
             <RadzenNumeric @bind-Value="@InputDate" Size="ButtonSize.Small" />
         </RadzenStack>
@@ -31,7 +36,7 @@
             <RadzenMarkers MarkerType="MarkerType.Square" />
             <RadzenSeriesDataLabels Visible="@showDataLabels" />
         </RadzenLineSeries>
-        <RadzenLineSeries Data="@BalanceSheet" CategoryProperty="Date" Title="支出" LineType="LineType.Dashed" ValueProperty="Outgo">
+        <RadzenLineSeries Data="@BalanceSheet" CategoryProperty="Date" Title="収入" LineType="LineType.Dashed" ValueProperty="Income">
             <RadzenMarkers MarkerType="MarkerType.Square" />
             <RadzenSeriesDataLabels Visible="@showDataLabels" />
         </RadzenLineSeries>
@@ -105,14 +110,20 @@
         if (BalanceSheet.Count > 100)
             BalanceSheet.RemoveAt(0);
         BalanceSheet = BalanceSheet.ToList();
-
-        sessionStorage.SetItemAsync("InputOutgo", InputOutgo);
     }
+
+    /*
+    private void Update(ChangeEventArgs args)
+    {
+        InputOutgo = Convert.ToInt32(args.Value);
+        sessionStorage.SetItemAsync("InputOutgo", InputOutgo);
+        sessionStorage.SetItemAsync("InputIncome", InputIncome);
+
+    }*/
 
 
     protected override async Task OnInitializedAsync()
     {
         BalanceSheet = new List<DataItem>();
-        InputOutgo = await sessionStorage.GetItemAsync<int>("InputOutgo");
     }
 }

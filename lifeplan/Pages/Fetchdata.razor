@@ -1,0 +1,62 @@
+﻿@page "/fetchdata"
+@using System.Globalization;
+@using System.Collections.Generic;
+@inject Blazored.SessionStorage.ISessionStorageService sessionStorage
+
+
+<PageTitle>初期ページ</PageTitle>
+
+<h1>ライフプランシミュレーション</h1>
+<RadzenButton Click=@(args => OnClick()) Text="グラフ更新" ButtonStyle="ButtonStyle.Primary" />
+
+
+<RadzenCard class="my-5">
+    <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Start" Wrap="FlexWrap.Wrap">
+        <RadzenStack Orientation="Orientation.Vertical" Gap="4px">
+            年間支出(万円)
+            <RadzenNumeric @bind-Value="@InputOutgo" @oninput="Update" Size="ButtonSize.Small" />
+        </RadzenStack>
+        <RadzenStack Orientation="Orientation.Vertical" Gap="4px">
+            年間収入(万円)
+            <RadzenNumeric @bind-Value="@InputIncome" Size="ButtonSize.Small" />
+        </RadzenStack>
+
+        <RadzenStack Orientation="Orientation.Vertical" Gap="4px">
+            開始年数(年)
+            <RadzenNumeric @bind-Value="@InputDate" Size="ButtonSize.Small" />
+        </RadzenStack>
+    </RadzenStack>
+</RadzenCard>
+
+@code {
+    int InputOutgo; //支出
+
+    int InputDate = 2019;
+    int Balance; //収支
+
+    int _inputOutgo;
+    int InputIncome; //収入
+
+    private void OnClick()
+    {
+        sessionStorage.SetItemAsync("InputOutgo", InputOutgo);
+        sessionStorage.SetItemAsync("InputIncome", InputIncome);
+        sessionStorage.SetItemAsync("InputDate", InputDate);
+    }
+
+    private void Update(ChangeEventArgs args)
+    {
+        InputOutgo = Convert.ToInt32(args.Value);
+        sessionStorage.SetItemAsync("InputOutgo", InputOutgo);
+        sessionStorage.SetItemAsync("InputIncome", InputIncome);
+        sessionStorage.SetItemAsync("InputDate", InputDate);
+    }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        InputOutgo = await sessionStorage.GetItemAsync<int>("InputOutgo");
+
+    }
+
+}
