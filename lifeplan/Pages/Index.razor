@@ -7,15 +7,14 @@
 <PageTitle>初期ページ</PageTitle>
 
 <h1>ライフプランシミュレーション</h1>
-
-<RadzenButton Click=@(args => OnClick("Primary button")) Text="グラフ更新" ButtonStyle="ButtonStyle.Primary" />
+<RadzenButton Click=@(args => OnClick()) Text="グラフ更新" ButtonStyle="ButtonStyle.Primary" />
 
 
 <RadzenCard class="my-5">
     <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Start" Wrap="FlexWrap.Wrap">
         <RadzenStack Orientation="Orientation.Vertical" Gap="4px">
             年間支出(万円)
-            <RadzenNumeric @bind-Value="@InputOutgo" Size="ButtonSize.Small" />
+            <RadzenNumeric @bind-Value="@InputOutgo" @oninput="Update" Size="ButtonSize.Small" />
         </RadzenStack>
         <RadzenStack Orientation="Orientation.Vertical" Gap="4px">
             年間収入(万円)
@@ -26,96 +25,37 @@
             開始年数(年)
             <RadzenNumeric @bind-Value="@InputDate" Size="ButtonSize.Small" />
         </RadzenStack>
-
-
     </RadzenStack>
-
-    <RadzenChart @ref="chart0">
-        <RadzenLineSeries Data="@BalanceSheet" CategoryProperty="Date" Title="支出" LineType="LineType.Dashed" ValueProperty="Outgo">
-            <RadzenMarkers MarkerType="MarkerType.Square" />
-            <RadzenSeriesDataLabels Visible="@showDataLabels" />
-        </RadzenLineSeries>
-        <RadzenLineSeries Data="@BalanceSheet" CategoryProperty="Date" Title="収入" LineType="LineType.Dashed" ValueProperty="Income">
-            <RadzenMarkers MarkerType="MarkerType.Square" />
-            <RadzenSeriesDataLabels Visible="@showDataLabels" />
-        </RadzenLineSeries>
-
-        <RadzenLineSeries Data="@BalanceSheet" CategoryProperty="Date" Title="収支" LineType="LineType.Dashed" ValueProperty="Balance">
-            <RadzenMarkers MarkerType="MarkerType.Square" />
-            <RadzenSeriesDataLabels Visible="@showDataLabels" />
-        </RadzenLineSeries>
-
-        <RadzenCategoryAxis Padding="20" />
-        <RadzenValueAxis Formatter="@FormatAsYen">
-            <RadzenGridLines Visible="true" />
-            <RadzenAxisTitle Text="日本円" />
-        </RadzenValueAxis>
-    </RadzenChart>
-
 </RadzenCard>
 
 @code {
     int InputOutgo; //支出
-    int InputIncome; //収入
+
     int InputDate = 2019;
     int Balance; //収支
 
-    private List<DataItem> BalanceSheet;
+    int _inputOutgo;
+    int InputIncome; //収入
 
-    bool showDataLabels = false;
-
-    class DataItem
+    private void OnClick()
     {
-        public int Date { get; set; }
-        public double Outgo { get; set; }
-        public double Income { get; set; }
-        public double Balance { get; set; }
+        sessionStorage.SetItemAsync("InputOutgo", InputOutgo);
+        sessionStorage.SetItemAsync("InputIncome", InputIncome);
+        sessionStorage.SetItemAsync("InputDate", InputDate);
     }
 
-    string FormatAsYen(object value)
+    private void Update(ChangeEventArgs args)
     {
-        return ((double)value).ToString("C0", CultureInfo.CreateSpecificCulture("ja-Jp"));
-    }
-
-    string FormatAsYear(object value)
-    {
-        if (value != null)
-        {
-            return Convert.ToDateTime(value).ToString("yy");
-        }
-
-        return string.Empty;
-    }
-
-    RadzenChart chart0;
-
-    private void OnClick(string text)
-    {
-        BalanceSheet.Clear();
-        //DataItem d = new DataItem() { Date = 2019, Outgo = new Random().NextDouble() * 1000 };
-        for (var i = 0; i < 10; i++)
-        {
-            DataItem d = new DataItem()
-            {
-                Date = InputDate + i,
-                Outgo = InputOutgo,
-                Income = InputIncome,
-                Balance = InputIncome - InputOutgo
-            };
-            BalanceSheet.Add(d);
-        }
-
-        //BalanceSheet.Add(d);
-        if (BalanceSheet.Count > 100)
-            BalanceSheet.RemoveAt(0);
-        BalanceSheet = BalanceSheet.ToList();
+        InputOutgo = Convert.ToInt32(args.Value);
+        sessionStorage.SetItemAsync("InputOutgo", InputOutgo);
+        sessionStorage.SetItemAsync("InputIncome", InputIncome);
+        sessionStorage.SetItemAsync("InputDate", InputDate);
     }
 
 
     protected override async Task OnInitializedAsync()
     {
-        BalanceSheet = new List<DataItem>();
-        var value = await sessionStorage.GetItemAsync<int>("InputOutgo");
-        InputOutgo = value;
+        InputOutgo = await sessionStorage.GetItemAsync<int>("InputOutgo");
     }
+
 }

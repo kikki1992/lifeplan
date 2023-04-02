@@ -1,12 +1,8 @@
 ﻿<Properties StartupConfiguration="{69DF8470-89EE-42C9-B4FA-821B47120709}|https">
   <MonoDevelop.Ide.Workbench ActiveDocument="lifeplan/Pages/Index.razor">
     <Files>
-      <File FileName="lifeplan/Pages/Index.razor" Line="8" Column="1" />
       <File FileName="lifeplan/Pages/Counter.razor" Line="5" Column="1" />
-      <File FileName="lifeplan/Shared/NavMenu.razor" Line="1" Column="1" />
-      <File FileName="lifeplan/_Imports.razor" Line="13" Column="1" />
-      <File FileName="lifeplan/wwwroot/index.html" Line="31" Column="68" />
-      <File FileName="lifeplan/Program.cs" Line="3" Column="16" />
+      <File FileName="lifeplan/Pages/Index.razor" Line="115" Column="55" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,14 +16,11 @@
           </Node>
         </State>
       </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
