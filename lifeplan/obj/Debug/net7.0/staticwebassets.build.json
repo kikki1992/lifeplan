@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "e9I65/N9pvPWPOIE83+ogA+9Gg4gC2WfigOCVjdll1s=",
+  "Hash": "G56s/571jGD+venSWoOnxmH5ufztqDpuZYotFMgjxvM=",
   "Source": "lifeplan",
   "BasePath": "/",
   "Mode": "Root",
@@ -610,6 +610,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/rinmo/.nuget/packages/microsoft.aspnetcore.components.webassembly/7.0.4/build/net7.0/blazor.webassembly.js"
+    },
+    {
+      "Identity": "/Users/rinmo/Projects/LifePlanSimulate/lifeplan/lifeplan/bin/Debug/net7.0/wwwroot/_framework/Blazored.SessionStorage.dll",
+      "SourceId": "lifeplan",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/rinmo/Projects/LifePlanSimulate/lifeplan/lifeplan/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazored.SessionStorage.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/rinmo/.nuget/packages/blazored.sessionstorage/2.3.0/lib/net7.0/Blazored.SessionStorage.dll"
     },
     {
       "Identity": "/Users/rinmo/Projects/LifePlanSimulate/lifeplan/lifeplan/bin/Debug/net7.0/wwwroot/_framework/dotnet.7.0.4.rtqyjs36lm.js",
@@ -6220,6 +6237,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/rinmo/Projects/LifePlanSimulate/lifeplan/lifeplan/bin/Debug/net7.0/wwwroot/_framework/System.Net.NetworkInformation.dll"
+    },
+    {
+      "Identity": "/Users/rinmo/Projects/LifePlanSimulate/lifeplan/lifeplan/obj/Debug/net7.0/build-gz/MGhSyq4z.gz",
+      "SourceId": "lifeplan",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/rinmo/Projects/LifePlanSimulate/lifeplan/lifeplan/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazored.SessionStorage.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "/Users/rinmo/Projects/LifePlanSimulate/lifeplan/lifeplan/bin/Debug/net7.0/wwwroot/_framework/Blazored.SessionStorage.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/rinmo/Projects/LifePlanSimulate/lifeplan/lifeplan/bin/Debug/net7.0/wwwroot/_framework/Blazored.SessionStorage.dll"
     },
     {
       "Identity": "/Users/rinmo/Projects/LifePlanSimulate/lifeplan/lifeplan/obj/Debug/net7.0/build-gz/mIBlkHu4.gz",

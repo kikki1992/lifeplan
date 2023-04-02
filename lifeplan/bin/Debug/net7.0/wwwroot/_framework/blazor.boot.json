@@ -7,6 +7,7 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
+      "Blazored.SessionStorage.dll": "sha256-Y5WVl4GeKE4HMIAYngGySxcPse+7tZjlwyN0jaZSWS4=",
       "Microsoft.AspNetCore.Authorization.dll": "sha256-QP+9ib2tHpYrkwMTIkh60aO49DKTGwJBAA5RaITVGDE=",
       "Microsoft.AspNetCore.Components.dll": "sha256-sCo2GmgrMtZQSY+teWT1XlU93C\/x75FDwL155zjC5TI=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-x+mgWzFuhFpGICdKYW5hmKJ3HUUw4GrXhMFi17T4JIM=",
@@ -200,13 +201,13 @@
       "mscorlib.dll": "sha256-3H8zsATEgIcRSRoZhWYtgfKT5VniJvhcYxLruf8koAY=",
       "netstandard.dll": "sha256-bbx+pnJNmXZyPqAgESJnWLJsbfuAl0UflLCdl9slPYE=",
       "System.Private.CoreLib.dll": "sha256-pUYF+nr8SzfBMCLc3FM2i\/YivXJlzztdLin+aUsoqP0=",
-      "lifeplan.dll": "sha256-i7SEqbYW5BhRzOeWyt0IL+6vesmJqOexOAbLFjsIOmA="
+      "lifeplan.dll": "sha256-\/NjVzPFBwBZF40siJvC+jQ3+T6sF\/Ej4nQGPvtJ9jPk="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "lifeplan.pdb": "sha256-bg90IZ8n7VnNRIYGQsq3g0qfj9cg9awf1JTJ+FQzLCk="
+      "lifeplan.pdb": "sha256-6VndZ9XfnnEcWuDJio+2UiZdlXF6030UTBfDh\/sE1pE="
     },
     "runtime": {
       "dotnet.7.0.4.rtqyjs36lm.js": "sha256-3l+4ZYRWpGMbBjNqeIqO9T\/65euaOzIvRlVX2SySvFQ=",

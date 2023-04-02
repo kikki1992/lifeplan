@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "bxZXDc1wJ+jshWPVg4LrZJrhN4/688vBd0y06nK8e1UqlYDRWDS2F6j7DwV3W+N1lk5OPP3W8IWFbTvbo1nsNQ==",
+  "dgSpecHash": "615XYLc8vYMsYaKwxjcPGQ8oQhoOHUMqRqWnUd5FXaIdtZOwzA5jRVeuOzXWQHOH3BfXXxtYZ8KZNCJjT2+96w==",
   "success": true,
   "projectFilePath": "/Users/rinmo/Projects/LifePlanSimulate/lifeplan/lifeplan/lifeplan.csproj",
   "expectedPackageFiles": [
+    "/Users/rinmo/.nuget/packages/blazored.sessionstorage/2.3.0/blazored.sessionstorage.2.3.0.nupkg.sha512",
     "/Users/rinmo/.nuget/packages/libsassbuilder/2.0.1/libsassbuilder.2.0.1.nupkg.sha512",
     "/Users/rinmo/.nuget/packages/microsoft.aspnetcore.authorization/7.0.4/microsoft.aspnetcore.authorization.7.0.4.nupkg.sha512",
     "/Users/rinmo/.nuget/packages/microsoft.aspnetcore.components/7.0.4/microsoft.aspnetcore.components.7.0.4.nupkg.sha512",

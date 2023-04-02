@@ -1,6 +1,8 @@
 ﻿@page "/"
 @using System.Globalization;
 @using System.Collections.Generic;
+@inject Blazored.SessionStorage.ISessionStorageService sessionStorage
+
 
 <PageTitle>初期ページ</PageTitle>
 
@@ -16,18 +18,29 @@
             <RadzenNumeric @bind-Value="@InputOutgo" Size="ButtonSize.Small" />
         </RadzenStack>
         <RadzenStack Orientation="Orientation.Vertical" Gap="4px">
-            年間収入
+            年間収入(万円)
             <RadzenNumeric @bind-Value="@InputIncome" Size="ButtonSize.Small" />
         </RadzenStack>
 
         <RadzenStack Orientation="Orientation.Vertical" Gap="4px">
-            開始年数
+            開始年数(年)
             <RadzenNumeric @bind-Value="@InputDate" Size="ButtonSize.Small" />
         </RadzenStack>
+
+
     </RadzenStack>
 
     <RadzenChart @ref="chart0">
         <RadzenLineSeries Data="@BalanceSheet" CategoryProperty="Date" Title="支出" LineType="LineType.Dashed" ValueProperty="Outgo">
+            <RadzenMarkers MarkerType="MarkerType.Square" />
+            <RadzenSeriesDataLabels Visible="@showDataLabels" />
+        </RadzenLineSeries>
+        <RadzenLineSeries Data="@BalanceSheet" CategoryProperty="Date" Title="収入" LineType="LineType.Dashed" ValueProperty="Income">
+            <RadzenMarkers MarkerType="MarkerType.Square" />
+            <RadzenSeriesDataLabels Visible="@showDataLabels" />
+        </RadzenLineSeries>
+
+        <RadzenLineSeries Data="@BalanceSheet" CategoryProperty="Date" Title="収支" LineType="LineType.Dashed" ValueProperty="Balance">
             <RadzenMarkers MarkerType="MarkerType.Square" />
             <RadzenSeriesDataLabels Visible="@showDataLabels" />
         </RadzenLineSeries>
@@ -45,6 +58,8 @@
     int InputOutgo; //支出
     int InputIncome; //収入
     int InputDate = 2019;
+    int Balance; //収支
+
     private List<DataItem> BalanceSheet;
 
     bool showDataLabels = false;
@@ -54,6 +69,7 @@
         public int Date { get; set; }
         public double Outgo { get; set; }
         public double Income { get; set; }
+        public double Balance { get; set; }
     }
 
     string FormatAsYen(object value)
@@ -82,7 +98,9 @@
             DataItem d = new DataItem()
             {
                 Date = InputDate + i,
-                Outgo = InputOutgo + i
+                Outgo = InputOutgo,
+                Income = InputIncome,
+                Balance = InputIncome - InputOutgo
             };
             BalanceSheet.Add(d);
         }
@@ -94,23 +112,10 @@
     }
 
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
         BalanceSheet = new List<DataItem>();
-        UpdateBalanceSheet();
+        var value = await sessionStorage.GetItemAsync<int>("InputOutgo");
+        InputOutgo = value;
     }
-
-    private void UpdateBalanceSheet()
-    {
-        BalanceSheet.Clear();
-        for (var i = 0; i < 10; i++)
-        {
-            BalanceSheet.Add(new DataItem
-            {
-                Date = InputDate + i,
-                Outgo = InputOutgo + i
-            });
-        }
-    }
-
 }
